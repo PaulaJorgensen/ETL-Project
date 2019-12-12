@@ -20,3 +20,21 @@ websites TEXT
 );
 
 SELECT * FROM fast_food_datafiniti
+
+--DROP TABLE fast_food_yelp
+
+CREATE TABLE fast_food_yelp (
+alias VARCHAR (100) NOT NULL,
+name VARCHAR (75) NOT NULL,
+url TEXT,
+latitude FLOAT NOT NULL,
+longitude FLOAT NOT NULL,
+address1 VARCHAR (250),
+address2 VARCHAR (250),
+city VARCHAR (50) NOT NULL,
+zip_code VARCHAR (50) NOT NULL,
+state VARCHAR (20) NOT NULL,
+phone TEXT
+);
+
+SELECT * FROM fast_food_yelp;
