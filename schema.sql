@@ -38,3 +38,16 @@ phone TEXT
 );
 
 SELECT * FROM fast_food_yelp;
+
+--DROP TABLE population_by_zip
+
+CREATE TABLE population_by_zip (
+population INTEGER,
+min_age INTEGER,
+max_age INTEGER,
+gender VARCHAR (10),
+zip_code VARCHAR (10),
+geo_id VARCHAR (50)
+);
+
+SELECT * FROM population_by_zip
