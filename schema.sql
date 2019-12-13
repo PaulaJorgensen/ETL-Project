@@ -39,15 +39,26 @@ phone TEXT
 
 SELECT * FROM fast_food_yelp;
 
+DROP TABLE population_by_zip
+--DROP TABLE zip_lat_long
+
+CREATE TABLE zip_lat_long (
+zip VARCHAR (10),
+lat FLOAT,
+lng FLOAT
+);
+
+SELECT * FROM zip_lat_long
+
 --DROP TABLE population_by_zip
 
 CREATE TABLE population_by_zip (
-population INTEGER,
-min_age INTEGER,
-max_age INTEGER,
+population integer,
+min_age integer,
+max_age integer,
 gender VARCHAR (10),
-zip_code VARCHAR (10),
-geo_id VARCHAR (50)
+zip_code varchar (5),
+geo_id varchar (50)
 );
 
 SELECT * FROM population_by_zip
