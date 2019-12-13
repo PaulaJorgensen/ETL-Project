@@ -28,15 +28,31 @@ create table fast_food_population_base as (
 select ff.name
 	, ff.address
 	, ff.city
-	, ff.country
-	, ff.postal_code
 	, ff.province "state"
+	, ff.postal_code
 	, ff.websites "website"
 	, p.population
 from public.fast_food_datafiniti ff
-join pop_zip_agg p on ff.postal_code = p.zip_code
+		join pop_zip_agg p on ff.postal_code = p.zip_code
 order by 1,3);
 
 --new table output
 select *
 from fast_food_population_base;
+
+--Join to fast food yelp dataset and create new table
+create table fast_food_population_base_yelp as (
+select y.name
+	, y.address1
+	, y.city
+	, y.state
+	, y.zip_code
+	, y.url "website"
+	, p.population
+from public.fast_food_yelp y
+		join pop_zip_agg p on y.zip_code = p.zip_code
+order by 1,3);
+
+--new table output
+select *
+from fast_food_population_base_yelp;
